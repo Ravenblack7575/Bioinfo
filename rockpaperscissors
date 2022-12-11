@@ -1,0 +1,86 @@
+#Coding Exercise from 100 Days of Python Coding
+
+import random
+
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+
+
+sign = [rock, paper, scissors]
+
+#ask the player for a choice
+
+player_choice = int(input("Please enter a choice: [1]rock, [2]paper or [3]scissors."))
+
+print("Player: ")
+
+if player_choice == 1:
+    print(rock)
+elif player_choice == 2:
+    print(paper)
+else:
+    print(scissors)
+
+
+player_sign = sign[player_choice-1]
+
+#have the computer randomly make a choice
+
+
+
+computer_choice = 1+random.randint(0,2)
+
+computer_sign = sign[computer_choice-1]
+
+
+print("Computer: ")
+
+
+if computer_choice == 1:
+    print(rock)
+elif computer_choice == 2:
+    print(paper)
+else:
+    print(scissors)
+
+#"Please enter a choice: [1]rock, [2]paper or [3]scissors.
+#determine who won
+
+if player_choice == computer_choice:
+    print("Tie!")
+elif player_choice == 1 and computer_choice == 3:
+    print("Human won.")   
+elif player_choice == 2 and computer_choice == 1:
+    print("Human won.")
+elif player_choice == 3 and computer_choice == 2:
+    print("Human won.")
+else:
+    print("Computer won.")
+
